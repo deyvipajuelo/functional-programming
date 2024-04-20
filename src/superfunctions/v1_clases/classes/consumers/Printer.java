@@ -1,8 +1,6 @@
-package superfunctions.v1.classes.consumers;
+package superfunctions.v1_clases.classes.consumers;
 
-import superfunctions.v1.interfaces.Consumer;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+import superfunctions.v1_clases.interfaces.Consumer;
 
 public class Printer implements Consumer {
     @Override

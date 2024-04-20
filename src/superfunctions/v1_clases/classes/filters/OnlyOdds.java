@@ -1,6 +1,6 @@
-package superfunctions.v1.classes.filters;
+package superfunctions.v1_clases.classes.filters;
 
-import superfunctions.v1.interfaces.Predicate;
+import superfunctions.v1_clases.interfaces.Predicate;
 
 public class OnlyOdds implements Predicate {
     @Override

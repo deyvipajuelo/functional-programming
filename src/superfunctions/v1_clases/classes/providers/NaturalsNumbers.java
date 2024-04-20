@@ -1,6 +1,6 @@
-package superfunctions.v1.classes.providers;
+package superfunctions.v1_clases.classes.providers;
 
-import superfunctions.v1.interfaces.Provider;
+import superfunctions.v1_clases.interfaces.Provider;
 
 public class NaturalsNumbers implements Provider {
 

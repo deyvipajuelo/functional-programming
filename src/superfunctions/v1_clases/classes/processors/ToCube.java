@@ -1,6 +1,6 @@
-package superfunctions.v1.classes.processors;
+package superfunctions.v1_clases.classes.processors;
 
-import superfunctions.v1.interfaces.Processor;
+import superfunctions.v1_clases.interfaces.Processor;
 
 public class ToCube implements Processor {
     @Override

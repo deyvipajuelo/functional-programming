@@ -1,6 +1,6 @@
-package superfunctions.v1.classes.reducers;
+package superfunctions.v1_clases.classes.reducers;
 
-import superfunctions.v1.interfaces.Reducer;
+import superfunctions.v1_clases.interfaces.Reducer;
 
 public class MultiplyReducer implements Reducer {
     @Override

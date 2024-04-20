@@ -1,13 +1,10 @@
-package superfunctions.v1;
+package superfunctions.v1_clases;
 
-import superfunctions.v1.classes.consumers.Printer;
-import superfunctions.v1.classes.filters.OnlyEvens;
-import superfunctions.v1.classes.processors.ToSquare;
-import superfunctions.v1.classes.providers.NaturalsNumbers;
-import superfunctions.v1.classes.providers.RandomNumbers;
-import superfunctions.v1.classes.reducers.MultiplyReducer;
-import superfunctions.v1.classes.reducers.SumReducer;
-import superfunctions.v1.interfaces.Consumer;
+import superfunctions.v1_clases.classes.consumers.Printer;
+import superfunctions.v1_clases.classes.filters.OnlyEvens;
+import superfunctions.v1_clases.classes.processors.ToSquare;
+import superfunctions.v1_clases.classes.providers.NaturalsNumbers;
+import superfunctions.v1_clases.classes.reducers.MultiplyReducer;
 
 import java.util.List;
 

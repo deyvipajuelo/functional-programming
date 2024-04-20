@@ -1,6 +1,6 @@
-package superfunctions.v1;
+package superfunctions.v1_clases;
 
-import superfunctions.v1.interfaces.*;
+import superfunctions.v1_clases.interfaces.*;
 
 import java.util.ArrayList;
 import java.util.List;
