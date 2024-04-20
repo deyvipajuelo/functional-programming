@@ -40,7 +40,7 @@ public class SuperFunctions {
         return numbers;
     }
 
-    static int reduce(List<Integer> numbers, Reducer reducer, Integer identity) {
+    static int reduce(List<Integer> numbers, Integer identity, Reducer reducer) {
         int total = identity;
         for (Integer number : numbers) {
             total = reducer.reduce(total, number);

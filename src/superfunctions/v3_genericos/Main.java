@@ -1,11 +1,6 @@
-package superfunctions.v2_inline;
+package superfunctions.v3_genericos;
 
-import superfunctions.v1_clases.classes.consumers.Printer;
-import superfunctions.v1_clases.classes.filters.OnlyEvens;
-import superfunctions.v1_clases.classes.processors.ToSquare;
-import superfunctions.v1_clases.classes.providers.NaturalsNumbers;
-import superfunctions.v1_clases.classes.reducers.MultiplyReducer;
-import superfunctions.v2_inline.interfaces.*;
+import superfunctions.v3_genericos.interfaces.*;
 
 import java.util.List;
 import java.util.Random;
@@ -17,26 +12,26 @@ public class Main {
 
     Main() {
         // 1. Create list of integers
-        List<Integer> initialNumbers = SuperFunctions.provide(10, new Provider() {
+        List<Integer> initialValues = SuperFunctions.provide(10, new Provider<Integer>() {
             Random random = new Random();
             @Override
             public Integer provide() {
                 return random.nextInt(10);
             }
         });
-        System.out.println(initialNumbers);
+        System.out.println(initialValues);
 
         // 2. Filer the numbers
-        List<Integer> filteredNumbers = SuperFunctions.filter(initialNumbers, new Predicate() {
+        List<Integer> filteredValues = SuperFunctions.filter(initialValues, new Predicate<Integer>() {
             @Override
             public boolean test(Integer number) {
                 return number % 2 == 0;
             }
         });
-        System.out.println(filteredNumbers);
+        System.out.println(filteredValues);
 
         // 3. Process each number
-        List<Integer> processedNumbers = SuperFunctions.process(filteredNumbers, new Processor() {
+        List<Integer> processedNumbers = SuperFunctions.process(filteredValues, new UnaryOperator<Integer>() {
             @Override
             public Integer process(Integer number) {
                 return number * number;
@@ -44,8 +39,17 @@ public class Main {
         });
         System.out.println(processedNumbers);
 
+        // 3.a. Return every number as string
+        List<String> numberAsString = SuperFunctions.process(processedNumbers, new Processor<Integer, String>() {
+            @Override
+            public String process(Integer number) {
+                return "The values is: " + number;
+            }
+        });
+        System.out.println(numberAsString);
+
         // 4. Show every number on screen
-        SuperFunctions.consume(processedNumbers, new Consumer() {
+        SuperFunctions.consume(processedNumbers, new Consumer<Integer>() {
             @Override
             public void consume(Integer number) {
                 System.out.println(number);
@@ -54,7 +58,7 @@ public class Main {
 
         // 5. Reduce all the numbers
         System.out.println();
-        System.out.println("The total is: "+ SuperFunctions.reduce(processedNumbers, 1, new Reducer() {
+        System.out.println("The total is: "+ SuperFunctions.reduce(processedNumbers, 0, new BinaryOperator<Integer>() {
             @Override
             public Integer reduce(Integer numberOne, Integer numberTwo) {
                 return numberOne + numberTwo;
